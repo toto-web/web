@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/shopnoithat?createDatabaseIfNotExist=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">123456a@A</property>
+	    <!-- c3p0 config http://www.hibernate.org/214.html -->
+        <property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>        
+        <property name="hibernate.c3p0.acquire_increment">1</property>
+        <property name="hibernate.c3p0.idle_test_period">60</property>
+        <property name="hibernate.c3p0.min_size">1</property>
+        <property name="hibernate.c3p0.max_size">100</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.timeout">0</property>
+        <property name="hibernate.c3p0.acquireRetryAttempts">1</property>
+        <property name="hibernate.c3p0.acquireRetryDelay">250</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.id.new_generator_mappings" >true</property>	
+		<mapping class="com.noithat.object.Account" />
+		<mapping class="com.noithat.object.Categories" />
+		<mapping class="com.noithat.object.Group" />
+		<mapping class="com.noithat.object.Information" />
+		<mapping class="com.noithat.object.Log" />
+		<mapping class="com.noithat.object.News" />
+		<mapping class="com.noithat.object.Product" />
+		<mapping class="com.noithat.object.Project" />
+	</session-factory>
+</hibernate-configuration>  
